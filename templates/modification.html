@@ -1,0 +1,61 @@
+<html ng-app="myapp">
+<head>
+	 <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js'></script>
+	 <script src='./static/javascripts/myapp.js'></script>
+	  <script src='./static/javascripts/controllers/control_style.js'></script>
+	    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	    
+     <link href="static/stylesheets/screen.css" rel="stylesheet" type="text/css">
+</head>
+<body id="main-container" ng-controller="change_style">
+	Api_google_fonts 
+	<input  type="button" name="charger" value="charger" ng-click="Api_google_fonts()">	</br>
+	<select ng-click="selection_police()">
+		<option ng-click="selection_police()"  value="{{ val.nom }}" ng-repeat=  'val in liste2' > {{ val.nom }} </option>
+	</select>
+	</br>
+	
+	<div id="charger"></div>
+
+	
+<input type="text" name="txt" placeholder="changer" ng-model="color" > <input type="button" name="couleur" value="changer la couleur" ng-click="colors()">	</br>
+<input  type="text" name="txt" placeholder="style" ng-model="police" ><input type="button" name="police" value="changer la police" ng-click="polices()">	</br>
+<input  type="text" name="txt" placeholder="taille" ng-model="font_size" ><input type="button" name="taille_police" value="changer la taille" ng-click="font_sizes()">	</br>
+<input  type="text" name="txt" placeholder="style" ng-model="text_decoration" ><input type="button" name="font" value="changer la decoration" ng-click="text_decorations()">	</br>
+
+	
+      </br>
+      <p id="changement1" ng-click="demo()" class="myclass" ng-style=""  >u r typing that  {{mod}} !</p>
+		</br>
+		 </br>
+      <h1 id="changement2" ng-click="demo()" class="myclass" ng-style=""  >you are  typing that  {{mod}} !</h1>
+		</br>
+		 
+    <span > <input type="button" value="set" ng-click="mystyle={color:'red'}"><input  type="button" value="clear" ng-click="mystyle={}"></span>
+		</div>
+		<div ng-click="demo()" ng-style='{ "width" : "100%"}'><img ng-style='{ "width" : "100%"}'  src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-frc1/294825_197408186990830_3311800_n.jpg">
+		</div>
+		<p id="result">&nbsp;</p>
+
+
+
+
+
+
+
+
+
+	<!--<div >
+	<input type="text" name="txt" placeholder="changer" ng-model="mod" ng-change="aply()">	
+	<input type="button" name="nom" value="changer" ng-click="aply()">
+      </br>
+      <h1 class="myclass" ng-style="mystyle"  >u r typing that  {{mod}} !</h1>
+		</br>
+		 
+    <span > <input type="button" value="set" ng-click="mystyle={color:'red'}"><input  type="button" value="clear" ng-click="mystyle={}"></span>
+		</div>
+		<p id="result">&nbsp;</p>
+	
+	-->	
+</body>
+</html>

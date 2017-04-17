@@ -1,0 +1,164 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "layout";
+@import url(http://fonts.googleapis.com/css?family=Cantata+One);
+/* -------------------------------------------------------------------------*/
+/* Layout */
+.error{
+	color: #FF6666;
+	text-align: center;
+	font-weight: bold;
+}
+body{
+
+	@include background-image(linear-gradient(left,#f9fee8, #aaabbb)); 
+}
+body{
+	
+	& #tools{
+		& .adapt-select {
+			width: 94%;
+		}
+		&  .adapt-input{
+			width: 87%;
+		}
+
+		border-right: 2px solid #aaabbb;
+		margin-right: 0em;
+	}
+	& #main-content{
+		padding: 0px; 
+	}
+	& .connected_tool{
+		border-bottom: 2px solid #aaabbb;
+		margin-right: 0em;
+	}
+}
+.error_pwd{
+	color: #FF6666;
+	margin-left: 0.5em;
+	font-weight: bold;
+}
+.selection:hover
+{ 
+background-color: #f9fee8 ;
+}
+.main{
+		
+	font-size: 1.2em
+	}
+.connected{
+		float: right;
+	}
+
+
+#page{
+	padding: 5%;
+	
+	font-size: 1.75em;
+
+
+
+}
+#main-container{
+	& #main-header{
+		padding-bottom: 1em;
+		& b{
+			color: blue;
+		}
+
+
+	}
+	& a{
+			color: white;
+
+			@include background-image(linear-gradient(right,gray, #aaafff)); 
+		}
+	padding: 10%;
+	
+	font-size: 1.25em;
+
+	
+	& label{
+		background-color: inherit;
+		background-color: #bbbbbb;
+		font-size: 0.9em;
+		
+	}
+	& .erreur{
+		font-size: 0.9em;
+		color: #FF6666; 
+		text-align: center;
+
+	}
+
+	
+
+	
+}
+@media screen and (max-width: 768px){
+#page{
+	padding: 2%;
+	
+	font-size: 1.0em;
+
+
+
+}
+#main-container{
+	padding: 7%;
+	
+	font-size: 1em;
+
+	
+	& label{
+		font-family: 'Cantata One';
+		
+	}
+
+	
+
+}	
+}
+@media screen and (max-width: 520px){
+	#page{
+	padding: 2%;
+	
+	font-size: 0.8em;
+	& .other{
+		display: none;
+	}
+
+
+
+}
+#main-container{
+	padding: 5%;
+	
+	font-size: 0.8em;
+
+	
+	& label{
+		font-family: 'Cantata One';
+		
+	}
+
+	
+
+}	
+}
+
+
+#general{
+	background-color: yellow;
+	& #one{
+		background-color: red;
+	}
+	& #two{
+		background-color: blue;
+	}
+	& #three{
+		background-color: green;
+	}
+}  #art3{ color :red;} #art3{ font-size :1.1em;} #art1{ font-size :1.3em;} #menu3{ color :red;} #art2{ font-size :green;} #art2{ color :green;} #art2{ color :yellow;}

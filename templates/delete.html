@@ -1,0 +1,50 @@
+<html ng-app="ui.bootstrap">
+<head>
+	<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js'></script>
+    <script src='./static/javascripts/myapp.js'></script>
+    <script src='./static/javascripts/controllers/control_change_pwd.js'></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link href="static/stylesheets/screen.css" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src='./static/javascripts/ui-bootstrap-0.2.0.js'></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+</head>
+<body ng-controller="change_pwd">
+	
+	<header class="connected"><p>You are connected as <b> {{session.username}}  </b> </p> 
+	</br>
+	</br>
+
+	<a id="logout" href="/logout">Logout</a>
+	</header>
+
+</br>
+</br>
+
+	<article class="article">
+	
+	
+	<div collapse="compte">
+		<table style="border solid 1px red"><tr><td>
+
+			user name</td><td> user email</td> 
+			{{liste}}
+			
+		{%for user in liste %}
+		{%  if user["login"]!=session.username %}
+		<tr><td>{{user["login"]}}</td> <td>  {{user["email"]}}</td> </tr>
+		{% endif %}
+		{% endfor %}
+
+		
+	<form method="post" action="">
+		<input type="text" name="user" placeholder="user ">
+		<input id="save_pwd" type="button" value="Delete" class="btn">
+		</form>
+	</div>
+	
+	</article>
+</div>
+</body>
+</html>

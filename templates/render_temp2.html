@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="ui.bootstrap">
+<head>
+  
+  {% block head %}{% endblock%}
+</head>
+	
+
+
+<body {{controll}}>
+
+{%macro afficher(sitea)%}
+{% for item in sitea|dictsort recursive %}
+    {% set value=sitea[item[0]] %}
+    {% set key=item[0] %}
+
+    {% if value is string and key == "text" %}
+        
+
+
+
+
+    {% endif %}
+
+    
+    {% if not (value is string) %}
+        {% set len=key|length %}
+        {% set a= key[len-1] %}
+        {% if a|int() %}
+            {%set kk=key %}
+            {%set k=kk|replace(a,'',1)%}
+            {%set key=k%}
+        {%endif%}
+         {% if key=="img" %}
+       <{{ key }}  {{ang}} src="{{value["src"]}}" id="{{value["id"]}}" class="{{value["class"]}}" alt="image">
+       {{ afficher(value) }}
+        </{{ key }}>
+       {% else %}
+       <{{ key }}  {{ang}} id="{{value["id"]}}" style="border:1px solid red;" class="{{value["class"]}}" >
+
+        {{ afficher(value) }}
+        </{{ key }}>
+        {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+{% macro trie(dict)%} 
+  <header  {{ang}} id={{dict["header"]["id"]}} class={{dict["header"]["class"]}}>{{afficher(dict["header"])}}</header>
+  <nav  {{ang}} id={{dict["nav"]["id"]}} class={{dict["nav"]["class"]}}>{{afficher(dict["nav"])}}</nav>
+  <div  {{ang}} id={{dict["div"]["id"]}} class={{dict["div"]["class"]}}>{{afficher(dict["div"])}}</div>
+  <footer  {{ang}} id={{dict["footer"]["id"]}} class={{dict["footer"]["class"]}}>{{afficher(dict["footer"])}}</footer>
+{% endmacro %}
+ {% block corps %}{% endblock%}
+<div id="main-content">
+{{trie(site["pagefr"])}}
+</div>
+</body>
+</html>

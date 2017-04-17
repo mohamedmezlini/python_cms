@@ -1,0 +1,46 @@
+<html ng-app="ui.bootstrap">
+<head>
+	<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js'></script>
+    <script src='./static/javascripts/myapp.js'></script>
+    <script src='./static/javascripts/controllers/control_main.js'></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link href="static/stylesheets/screen.css" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src='./static/javascripts/ui-bootstrap-0.2.0.js'></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+</head>
+<body>
+	
+	<header class="connected"><p>You are connected as <b> {{session.username}}  </b> </p> 
+	</br>
+	</br>
+
+	<a id="logout" href="/logout">Logout</a>
+	</header>
+
+</br>
+</br>
+</br>
+	<article class="article">
+	<div class="main" ng-controller="CollapseDemoCtrl">
+	<button class="btn" ng-click=" compte = !compte">User account</button>
+	
+	<div collapse="compte">
+		<div class="well well-large, selection" onClick=" window.location='/account';">Change password</div> 
+		{% if permission==True %}
+		<div class="well well-large, selection" onClick=" window.location='/create';" >Create a new account</div>
+		<div class="well well-large, selection" onClick=" window.location='/delete';" >Delete user</div>
+		{% endif %}
+	</div>
+	<button class="btn" ng-click="style = !style">Managing the graphic chart</button>
+	
+	<div collapse="style">
+		<div class="well well-large, selection" onClick=" window.location='/style';" >Style management</div> 
+		<div class="well well-large, selection" onClick=" window.location='/layout';">Layout management</div>
+		<div class="well well-large, selection" onClick=" window.location='/content';">Content management</div>
+	</div>
+	</article>
+</div>
+</body>
+</html>

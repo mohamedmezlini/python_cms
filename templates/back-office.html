@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="static/stylesheets/screen.css" rel="stylesheet" type="text/css">
+    {% block header %}
+        <meta charset="utf-8" />
+        <title>{% block titre %}erreur{% endblock %}</title>
+    {% endblock %}
+    </head>
+
+    <body>
+       
+        {% block corps %}{% endblock %}        
+        {% block footer %}{% endblock %}
+        
+    </body>
+</html>

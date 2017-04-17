@@ -1,0 +1,17 @@
+{% extends "back-office.html" %}
+
+{% block titre %}Liste des pages{% endblock %}
+
+{% block corps %}
+<div id="main-container">
+	<header id="main-header">
+		<b>Choisissez une page a modifier:</b>
+	</header>
+{%for fichier in listes%}
+<a href="/home/benzina/exmple/templates/{{fichier}}">{{fichier}}</a>
+<br>
+{%endfor%}
+</div>
+{% endblock %}
+
+

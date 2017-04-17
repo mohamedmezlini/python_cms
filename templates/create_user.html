@@ -1,0 +1,51 @@
+<html ng-app="ui.bootstrap">
+<head>
+	<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js'></script>
+    <script src='./static/javascripts/myapp.js'></script>
+    <script src='./static/javascripts/controllers/control_create_user.js'></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link href="static/stylesheets/screen.css" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src='./static/javascripts/ui-bootstrap-0.2.0.js'></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+</head>
+<body ng-controller="change_pwd">
+	
+	<header class="connected"><p>You are connected as <b> {{session.username}}  </b> </p> 
+	</br>
+	</br>
+
+	<a id="logout" href="/logout">Logout</a>
+	</header>
+
+</br>
+</br>
+
+	<article class="article">
+	
+	
+	<div collapse="compte">
+	</br>
+	</br>
+	</br>
+		<h4 class="error">{{'{{'}}result {{'}}'}} </h4>
+		<div class="well well-large, selection, change_widht_pwd" ><label class="lab_pwd">Choose a login:</label><input type="text" class="input_pwd" ng-model="new_login" placeholder="login" name="login"><label class="error_pwd">{{'{{'}}error_login {{'}}'}}</label></div>
+
+		<div class="well well-large, selection, change_widht_pwd" ><label class="lab_pwd">Create a password:</label><input type="password" class="input_pwd" ng-model="new_pwd" placeholder="password" name="password"><label class="error_pwd">{{'{{'}}error_new_password {{'}}'}}</label></div>
+
+		<div class="well well-large, selection, change_widht_pwd" ><label class="lab_pwd">Confirm the password:</label><input type="password" class="input_pwd" ng-model="confirm_pwd" placeholder="confirm your password" name="password_confirm"><label class="error_pwd">{{'{{'}}error_confirm_password {{'}}'}}</label></div>
+
+		<div class="well well-large, selection, change_widht_pwd" ><label class="lab_pwd">Your current mail adress:</label><input type="text" class="input_pwd" ng-model="new_mail" placeholder="mail adress" name="email"><label class="error_pwd">{{'{{'}}error_mail {{'}}'}}</label></div>
+
+		<div class="well well-large, selection, change_widht_pwd" ><label class="lab_pwd">Permission:</label><input type="text" class="input_pwd" ng-model="permission" placeholder="True / False" name="permission">
+		<label class="error_pwd">{{'{{'}}error_permission{{'}}'}}</label></div>
+		
+
+		<input id="save_pwd" type="button" value="save" class="btn" ng-click="input_control()">
+	</div>
+	
+	</article>
+</div>
+</body>
+</html>

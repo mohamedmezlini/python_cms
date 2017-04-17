@@ -1,0 +1,59 @@
+/* 
+    Document   : backOffice
+    Created on : Nov 20, 2012, 9:59:54 AM
+    Author     : test
+    Description:
+        Purpose of the stylesheet follows.
+*/
+body{
+	font-family: verdana;
+}
+textarea{
+width:90%;
+height: 200px;
+resize: none
+}
+.helpText{
+	padding-top:10px;
+	font-size: 13px;
+	color: #5A5A5A; 
+}
+.help-block li{
+	list-style-type: none !important;
+}
+footer{
+	bottom:0;position:fixed;width:100%
+	}
+	.editableArea{
+	border-width:2px;	
+	border-style:dashed;
+	border-color: #044cc ;
+	}
+#menuConfig li.active a{
+ background-color: 	#EEEEEE !important;
+}
+.save-btn{
+	background:#CD3936 !important;
+	color:#fff !important;
+}
+.mydropdown{
+	margin-left: 0 !important;
+}
+.desc{
+	width:70%;
+	margin-left:30px;
+	font-family: verdana;
+	font-size: 12px;
+	color: #777777;
+}
+
+h4{
+	color: #777777 !important;
+}
+.caption h4 {
+	color: #CD3936 !important;
+}
+.listtmp{
+	width:100%;
+	height:112px
+}

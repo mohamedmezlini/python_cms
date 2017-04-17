@@ -1,0 +1,68 @@
+{% extends "render_temp.html" %}
+
+{% block head %}
+  <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js'></script>
+  <script src='./static/javascripts/myapp.js'></script>
+  <script src='./static/javascripts/controllers/control_style.js'></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  
+  <link href="static/stylesheets/screen.css" rel="stylesheet" type="text/css">
+ 
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src='./static/javascripts/ui-bootstrap-0.2.0.js'></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+  <title>Style</title>
+  {% endblock %}
+
+  {% block corps %}
+<header class="connected_tool"><p>You are connected as <b> {{session.username}}</b> <a id="logout" href="/logout">Logout</a>   </p>
+  </header>
+
+<div id="tools" onload="selection_police()">
+  <label>Police:</label><select class="adapt-select" class="dropdown"   id="google_fonts" ng-click="selection_police()">
+    <option class="dropdown-toggle" ng-click="selection_police()"  value="{{'{{'}} val.nom {{'}}'}} " ng-repeat=  'val in liste2' > {{'{{'}} val.nom {{'}}'}} </option>
+  </select>
+  </br>
+  <label>Color:</label><input class="adapt-input"  type='text' ng-model="color" ><input class="btn" type="button" value="Submit color" ng-click="colors()">
+</br>
+<label>Font Size:</label><input class="adapt-input"  type='number' min="0.1" step="0.1" ng-model="font_size" ><input class="btn" type="button" value="Submit font size" ng-click="font_sizes()">
+</br>
+<label>Text decoration:</label><select class="adapt-select" ng-model="text_decoration" class="dropdown" ng-click="text_decorations()">
+ <option class="dropdown-toggle" ng-click="text_decorations()"  value="{{'{{'}} txt_deco {{'}}'}} " ng-repeat=  'txt_deco in liste_decorations' > {{'{{'}} txt_deco {{'}}'}} </option>
+
+</select>
+</br>
+
+<label>Horizontal align:</label><select class="adapt-select" ng-model="text_align" class="dropdown" ng-click="text_aligns()">
+ <option class="dropdown-toggle" ng-click="text_aligns()"  value="{{'{{'}} txt_halign {{'}}'}} " ng-repeat=  'txt_halign in liste_halign' > {{'{{'}} txt_halign {{'}}'}} </option>
+
+</select>
+</br>
+<label>Vertical align:</label><select class="adapt-select" ng-model="vertical_align" class="dropdown" ng-click="vertical_aligns()">
+ <option class="dropdown-toggle" ng-click="vertical_aligns()"  value="{{'{{'}} txt_valign {{'}}'}} " ng-repeat=  'txt_valign in liste_valign' > {{'{{'}} txt_valign {{'}}'}} </option>
+
+</select>
+</br>
+<label>Font style:</label><select class="adapt-select" ng-model="font_style" class="dropdown" ng-click="font_styles()">
+ <option class="dropdown-toggle" ng-click="font_styles()"  value="{{'{{'}} f {{'}}'}} " ng-repeat=  'f in liste_font_styles' > {{'{{'}} f {{'}}'}} </option>
+
+</select>
+</br>
+<label>Font variant:</label><select class="adapt-select" ng-model="font_variant" class="dropdown" ng-click="font_variants()">
+ <option class="dropdown-toggle" ng-click="font_variants()"  value="{{'{{'}} f {{'}}'}} " ng-repeat=  'f in liste_font_variants' > {{'{{'}} f {{'}}'}} </option>
+
+</select>
+</br>
+<label>Font weight:</label><select class="adapt-select" ng-model="font_weight" class="dropdown" ng-click="font_weights()">
+ <option class="dropdown-toggle" ng-click="font_weights()"  value="{{'{{'}} f {{'}}'}} " ng-repeat=  'f in liste_font_weights' > {{'{{'}} f {{'}}'}} </option>
+
+</select>
+</br>
+</br>
+
+  <input class="btn"  type="button" name="save" value="save" ng-click="save_style()"> </br>
+ </div> 
+
+</body>
+{% endblock %}

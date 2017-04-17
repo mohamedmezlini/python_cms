@@ -1,0 +1,115 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "layout";
+@import url(http://fonts.googleapis.com/css?family=Cantata+One);
+/* -------------------------------------------------------------------------*/
+/* Layout */
+body{
+
+	@include background-image(linear-gradient(right,#f9fee8, #aaabbb)); 
+}
+
+#page{
+	padding: 5%;
+	
+	font-size: 1.75em;
+
+
+
+}
+#section{
+	
+	& #article{
+		
+
+	}
+	& #aside{
+		background-color: black;
+		height: 100%; 
+	}
+}
+#main-container{
+	& #main-header{
+		padding-bottom: 1em;
+		& b{
+			color: blue;
+		}
+
+
+	}
+	& a{
+			color: white;
+
+			@include background-image(linear-gradient(right,gray, #aaafff)); 
+		}
+	padding: 10%;
+	
+	font-size: 1.25em;
+
+	
+	& label{
+		font-family: 'Cantata One';
+		
+	}
+	& .erreur{
+		font-size: 1em;
+		color: red; 
+
+	}
+
+	
+
+	
+}
+@media screen and (max-width: 768px){
+#page{
+	padding: 2%;
+	
+	font-size: 1.0em;
+
+
+
+}
+#main-container{
+	padding: 7%;
+	
+	font-size: 1em;
+
+	
+	& label{
+		font-family: 'Cantata One';
+		
+	}
+
+	
+
+}	
+}
+@media screen and (max-width: 520px){
+	#page{
+	padding: 2%;
+	
+	font-size: 0.8em;
+	& .other{
+		display: none;
+	}
+
+
+
+}
+#main-container{
+	padding: 5%;
+	
+	font-size: 0.8em;
+
+	
+	& label{
+		font-family: 'Cantata One';
+		
+	}
+
+	
+
+}	
+}

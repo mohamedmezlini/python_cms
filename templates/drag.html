@@ -1,0 +1,84 @@
+<!--<html>
+	<head>
+		<title>Drag & drop</title>
+		<script type='text/JavaScript'>
+(function(t) {
+    var docu = document,
+        body = docu.body,
+        ke, de = docu.documentElement,
+        g = "scrollLeft",
+        ve = "scrollTop",
+        R = "onmouse";
+
+    function H(a, b, c, v) {
+        v = a[b];
+        a[b] = function(e) {
+            if (v) {
+                v.call(this, e);
+            }
+            c(e);
+        }
+    }
+    H(docu, R + 'up', function() {
+        t = 0
+    });
+    H(docu, R + 'move', function(e) {
+        if (t) {
+            t(e);
+        }
+    });
+    MOVE = function(e) {
+        var y = o = 0,
+            i, s = "px",
+            v = "ontouchstart";
+
+        function W(r) {
+            r = r || event;
+            e = r.srcElement || r.target;
+            i = e.style;
+            h(r);
+        }
+
+        function h(w) {
+            ke = i.position == "fixed";
+            t = d;
+            o = (w.pageX || w.x) - (ke ? (body[g] || de[g]) : 0), y = (w.pageY || w.y) - (ke ? (body[ve] || de[ve]) : 0);
+        }
+
+        function d(j) {
+            var n = o,
+                r = y;
+            if (s) {
+                h(j || event);
+                i.left = e.offsetLeft + o - n + s, i.top = e.offsetTop + y - r + s;
+            }
+        }
+        if (v in de) {
+            H(e, v, W);
+            H(e, 'ontouchmove', function(e) {
+                e.preventDefault();
+                e = e.touches;
+                if (e.length == 1) {
+                    d(e[0]);
+                }
+            });
+        } else {
+            H(e, R + 'down', W);
+        }
+        return {
+            kill: function() {
+                s = 0
+            }
+        }
+    }
+})();
+window.onload = function() {
+    MOVE(document.getElementById("move"))
+}
+		</script>
+	</head>
+	<body>
+		<div id="move" style="position:absolute;padding:50px;background:red;">f</div>
+	</body>
+</html> -->
+

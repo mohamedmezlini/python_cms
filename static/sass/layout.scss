@@ -1,0 +1,230 @@
+
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "susy";
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+$total-columns: $total-columns; // $total-columns columns
+$column-width: 12em; // columns are 4em wide
+$gutter-width: 0.5em; // with 1em gutters
+$grid-padding: 1em; // and 1em padding on the grid container
+
+
+
+body{
+	& .article {
+		@include container;
+	}
+	& #tools{
+	@include span-columns(2,$total-columns);
+	min-height: 100%;
+	}
+	& .main-content{
+		height: 700px;
+		
+		overflow-y: scroll;
+		@include span-columns(8 omega,$total-columns);
+		@include container;
+	}
+
+}
+.change_widht_pwd{
+	height: 2.2em;
+	min-height: 2.2em;
+}
+.error_pwd{
+	float: left;
+}
+.lab_pwd{
+	width: 15%;
+	float: left;
+}
+.input_pwd{
+	width: 20%	;
+	float: left;
+}
+#save_pwd{
+	float:right;
+}
+#logout{
+	float: left;
+}
+
+.main{
+		min-width: 100%;
+		min-height : 75%;
+		@include span-columns(10,$total-columns);
+
+	}
+.connected{
+		@include span-columns(2 omega,$total-columns);
+		& p {float: left;}
+
+	}
+.connected_tool{
+	@include span-columns(12,$total-columns);
+	 & p,a {
+	 	float: right;
+	 display: inline;}
+
+}
+
+#page{
+	@include container;
+& .menu-bar{
+
+	@include span-columns(10 omega ,$total-columns );
+	& li{
+		display:inline;
+	}
+}
+
+& .title{
+	@include span-columns($total-columns omega ,$total-columns );
+
+
+}
+& .articles{
+	@include span-columns(8  ,$total-columns );
+
+}
+& .other{
+	@include span-columns(3 omega ,$total-columns );
+}
+
+}
+#section{
+	@include container;
+	& #article{
+		@include span-columns(10,$total-columns);
+
+	}
+	& #aside{
+		@include span-columns(2 omega,$total-columns);
+	}
+}
+
+#main-container{
+
+
+	@include container;
+	
+	& .erreur{
+		@include span-columns(3 ,$total-columns);
+		@include push(4);
+	}	
+	
+}
+#login{
+	@include span-columns(6 ,$total-columns);
+	@include push(4);
+	
+& .label{@include span-columns(2 ,4);}
+& .input{@include span-columns(2 ,4);}
+
+}
+#mdp{
+	@include push(4);
+	@include span-columns(6 ,$total-columns);
+& .label{@include span-columns(2 ,4);}
+& .input{@include span-columns(2 ,4);}
+
+} 
+#nom{
+	@include push(4);
+	@include span-columns(6 ,$total-columns);
+& .label{@include span-columns(2 ,4);}
+& .input{@include span-columns(2 ,4);}
+
+}
+#prenom{
+	@include span-columns(6 ,$total-columns);
+	@include push(4);
+	
+& .label{@include span-columns(2 ,4);}
+& .input{@include span-columns(2 ,4);}
+
+} 
+
+#email{
+	@include span-columns(6 ,$total-columns);
+	@include push(4);
+	
+& .label{@include span-columns(2 ,4);}
+& .input{@include span-columns(2 ,4);}
+
+} 
+	
+	
+ #submit, #inscription{
+ 	@include push(1);
+	@include span-columns(6,$total-columns);
+	& .btn,.inscription{
+
+		@include span-columns(1 omega,6);
+	}
+}
+@media screen and (max-width: 768px){
+	#submit, #inscription{
+ 	
+	@include span-columns(6,$total-columns);
+	& .btn,.inscription{
+
+		@include span-columns(2 omega,6);
+	}
+}
+
+#page{
+	@include container;
+& .menu-bar{
+
+	@include span-columns(10 omega ,$total-columns );
+	& li{
+		display: block;
+	}
+}
+& .title{
+	@include span-columns($total-columns omega ,$total-columns );
+
+
+}
+& .articles{
+	@include span-columns($total-columns omega  ,$total-columns );
+
+}
+& .other{
+	@include span-columns($total-columns omega ,$total-columns );
+}
+
+}
+
+}	
+
+
+@media screen and (max-width: 520px){
+	#submit, #inscription{
+ 	
+	@include span-columns(6,$total-columns);
+	& .btn,.inscription{
+
+		@include span-columns(3 omega ,6);
+	}
+}
+}
+
+#general{
+	@include container;
+	@include span-columns($total-columns,$total-columns);
+	& #one{
+		@include span-columns(4,$total-columns);
+	}
+	& #two{
+		@include span-columns(4,$total-columns);
+	}
+	& #three{
+		@include span-columns(4 omega,$total-columns);
+	}
+}
